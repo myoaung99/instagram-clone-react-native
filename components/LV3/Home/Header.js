@@ -1,6 +1,5 @@
-import { View, Text, Image, StyleSheet, Pressable } from "react-native";
+import { View, Image, StyleSheet, Pressable } from "react-native";
 import React from "react";
-
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import IconButton from "../../LV2/Button/IconButton";
@@ -20,21 +19,21 @@ const Header = () => {
         <IconButton>
           <Feather
             name="plus-square"
-            size={20}
+            size={24}
             color="white"
             style={styles.icon}
           />
         </IconButton>
 
         <IconButton>
-          <Feather name="heart" size={20} color="white" style={styles.icon} />
+          <Feather name="heart" size={24} color="white" style={styles.icon} />
         </IconButton>
 
         <IconButton>
           <Badge style={styles.badge}>11</Badge>
           <Ionicons
             name="ios-chatbubble-outline"
-            size={20}
+            size={24}
             color="white"
             style={styles.icon}
           />
@@ -65,11 +64,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   icon: {
-    padding: 5,
+    padding: 10,
   },
   badge: {
-    left: 12,
-    bottom: 18,
+    left: 18,
+    bottom: 24,
     width: 20,
     height: 18,
   },

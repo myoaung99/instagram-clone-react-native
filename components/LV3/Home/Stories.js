@@ -1,6 +1,7 @@
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import React from "react";
-import { USERS } from "../../../data/user";
+import { USERS } from "../../../data/users";
+import { Divider } from "@rneui/themed";
 
 const Stories = () => {
   return (
@@ -22,14 +23,15 @@ const Stories = () => {
             </View>
             <View style={styles.nameContainer}>
               <Text style={styles.nameText}>
-                {user.username.length > 8
-                  ? user.username.slice(0, 7).toLocaleLowerCase() + "..."
+                {user.username.length > 6
+                  ? user.username.slice(0, 5).toLocaleLowerCase()
                   : user.username}
               </Text>
             </View>
           </View>
         ))}
       </ScrollView>
+      <Divider width={1} color="gray" />
     </View>
   );
 };
