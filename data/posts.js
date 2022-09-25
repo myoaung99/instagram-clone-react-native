@@ -13,10 +13,10 @@ export const POSTS = [
         user: "theqazman",
         comment: "Wow! This build looks fire. Super excited about it.",
       },
-      // {
-      //   user: "amanath.dev",
-      //   comment: "ONce I wake up, I'll finally be ready to code this up!.",
-      // },
+      {
+        user: "amanath.dev",
+        comment: "ONce I wake up, I'll finally be ready to code this up!.",
+      },
     ],
   },
 ];

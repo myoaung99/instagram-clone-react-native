@@ -50,7 +50,7 @@ const PostFooter = ({ post }) => {
           {post.likes} <Text>likes</Text>
         </Text>
 
-        <View style={{ marginBottom: 8, marginTop: 16 }}>
+        <View style={{ marginTop: 4 }}>
           <Text style={{ color: "white", fontWeight: "600" }}>
             {post.user}
             <Text style={{ color: "white", fontWeight: "400" }}>
@@ -60,21 +60,29 @@ const PostFooter = ({ post }) => {
           </Text>
         </View>
 
-        <Text style={{ color: "gray", marginVertical: 4 }}>
-          View all comments
-        </Text>
+        {!!post.comments?.length && (
+          <Text style={{ color: "gray", marginTop: 6 }}>
+            {post.comments?.length > 1
+              ? `View all ${post.comments.length} comments`
+              : `View ${post.comments.length} comment`}
+          </Text>
+        )}
 
-        <View style={{ marginBottom: 8 }}>
-          {post.comments.map((cmt) => (
-            <Text style={{ color: "white", fontWeight: "600" }}>
+        {!post.comments?.length && (
+          <Text style={{ color: "gray", marginTop: 6 }}>No comment</Text>
+        )}
+
+        {post.comments?.map((cmt) => (
+          <View>
+            <Text style={{ color: "white", fontWeight: "600", marginTop: 6 }}>
               {cmt.user}
               <Text style={{ color: "white", fontWeight: "400" }}>
                 {" "}
                 {cmt.comment}
               </Text>
             </Text>
-          ))}
-        </View>
+          </View>
+        ))}
       </View>
     </View>
   );
