@@ -7,15 +7,15 @@ import { POSTS } from "../data/posts";
 
 const HomeScreen = () => {
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
       <Header />
       <Stories />
-      <>
-        {POSTS.map((post) => (
-          <Post post={post} />
+      <ScrollView>
+        {POSTS.map((post, index) => (
+          <Post post={post} key={index} />
         ))}
-      </>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 

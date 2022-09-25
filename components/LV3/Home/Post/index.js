@@ -7,7 +7,7 @@ import PostFooter from "./PostFooter";
 
 const Post = ({ post }) => {
   return (
-    <View>
+    <View style={{ marginBottom: 12 }}>
       <PostHeader post={post} />
       <PostBody post={post} />
       <PostFooter post={post} />

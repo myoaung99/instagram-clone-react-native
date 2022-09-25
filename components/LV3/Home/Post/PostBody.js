@@ -14,7 +14,7 @@ export default PostBody;
 const styles = StyleSheet.create({
   imageContainer: {
     width: "100%",
-    height: 400,
+    height: 450,
   },
   image: {
     flex: 1,

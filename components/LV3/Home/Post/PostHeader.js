@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 6,
-    paddingVertical: 2,
+    paddingVertical: 3,
   },
   profile: {
     flexDirection: "row",
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     color: "white",
   },
   imageContainer: {
-    width: 40,
-    height: 40,
+    width: 35,
+    height: 35,
     borderRadius: 50,
     borderWidth: 3,
     borderColor: "#FF8501",

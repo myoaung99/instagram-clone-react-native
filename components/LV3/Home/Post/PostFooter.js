@@ -5,11 +5,15 @@ import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import IconButton from "../../../LV2/Button/IconButton";
 
-const PostFooter = () => {
+const PostFooter = ({ post }) => {
   return (
     <View>
       <View style={styles.container}>
         <View style={styles.iconContainer}>
+          <IconButton>
+            <Feather name="heart" size={24} color="white" style={styles.icon} />
+          </IconButton>
+
           <IconButton>
             <Feather
               name="plus-square"
@@ -17,10 +21,6 @@ const PostFooter = () => {
               color="white"
               style={styles.icon}
             />
-          </IconButton>
-
-          <IconButton>
-            <Feather name="heart" size={24} color="white" style={styles.icon} />
           </IconButton>
 
           <IconButton>
@@ -46,13 +46,35 @@ const PostFooter = () => {
       </View>
 
       <View style={styles.contentContainer}>
-        <Text style={styles.likeCount}>1203 likes</Text>
-        <Text style={styles.caption}>Caption</Text>
-
-        <Text style={styles.cmtText}>
-          <Text style={styles.cmtName}>mr.mouse</Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit!
+        <Text style={styles.likeCount}>
+          {post.likes} <Text>likes</Text>
         </Text>
+
+        <View style={{ marginBottom: 8, marginTop: 16 }}>
+          <Text style={{ color: "white", fontWeight: "600" }}>
+            {post.user}
+            <Text style={{ color: "white", fontWeight: "400" }}>
+              {" "}
+              {post.caption}
+            </Text>
+          </Text>
+        </View>
+
+        <Text style={{ color: "gray", marginVertical: 4 }}>
+          View all comments
+        </Text>
+
+        <View style={{ marginBottom: 8 }}>
+          {post.comments.map((cmt) => (
+            <Text style={{ color: "white", fontWeight: "600" }}>
+              {cmt.user}
+              <Text style={{ color: "white", fontWeight: "400" }}>
+                {" "}
+                {cmt.comment}
+              </Text>
+            </Text>
+          ))}
+        </View>
       </View>
     </View>
   );
@@ -79,9 +101,7 @@ const styles = StyleSheet.create({
   },
   likeCount: {
     color: "white",
-  },
-  caption: {
-    color: "white",
+    fontWeight: "600",
   },
   cmtName: {
     color: "white",
