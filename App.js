@@ -8,6 +8,7 @@ import DUMMY_SCREEN from "./screens/DUMMY_SCREEN.js";
 import CircleProfile from "./components/LV2/UI/CircleProfile";
 
 import { MaterialIcons } from "@expo/vector-icons";
+import AddPostScreen from "./screens/AddPostScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -16,10 +17,19 @@ function MyStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,
+        headerTitleAlign: "center",
+        headerTintColor: "#fff",
+        headerStyle: {
+          backgroundColor: "#000",
+        },
       }}
     >
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name="AddPost" component={AddPostScreen} />
     </Stack.Navigator>
   );
 }
@@ -27,56 +37,35 @@ function MyStack() {
 function MyTabs() {
   return (
     <Tab.Navigator
-      screenOptions={{
+      screenOptions={({ route, navigation }) => ({
         headerShown: false,
         tabBarShowLabel: false,
         tabBarActiveTintColor: "#fff",
         tabBarStyle: {
           position: "absolute",
           backgroundColor: "#000",
+          borderTopWidth: 1,
+          borderTopColor: "gray",
         },
-      }}
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+          if (route.name === "HomeStack") {
+            iconName = focused ? "home" : "home";
+          } else if (route.name === "Search") {
+            iconName = focused ? "search" : "search";
+          } else if (route.name === "Reel") {
+            iconName = focused ? "ondemand-video" : "ondemand-video";
+          } else if (route.name === "Shop") {
+            iconName = focused ? "shopping-bag" : "shopping-bag";
+          }
+          return <MaterialIcons name={iconName} size={28} color={color} />;
+        },
+      })}
     >
-      <Tab.Screen
-        name="HomeStack"
-        component={MyStack}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="home" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Search"
-        component={DUMMY_SCREEN}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="search" size={size} color={color} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Post"
-        component={DUMMY_SCREEN}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons
-              name="add-circle-outline"
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Shop"
-        component={DUMMY_SCREEN}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="shopping-bag" size={size} color={color} />
-          ),
-        }}
-      />
+      <Tab.Screen name="HomeStack" component={MyStack} />
+      <Tab.Screen name="Search" component={DUMMY_SCREEN} />
+      <Tab.Screen name="Reel" component={DUMMY_SCREEN} />
+      <Tab.Screen name="Shop" component={DUMMY_SCREEN} />
       <Tab.Screen
         name="Profile"
         component={DUMMY_SCREEN}

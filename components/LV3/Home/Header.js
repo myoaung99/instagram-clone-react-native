@@ -4,8 +4,15 @@ import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import IconButton from "../../LV2/Button/IconButton";
 import Badge from "../../LV2/UI/Badge";
+import { useNavigation } from "@react-navigation/native";
 
 const Header = () => {
+  const navigation = useNavigation();
+
+  const navigateAddPostHandler = () => {
+    navigation.navigate("AddPost");
+  };
+
   return (
     <View style={styles.container}>
       <Pressable style={({ pressed }) => pressed && styles.pressed}>
@@ -16,7 +23,7 @@ const Header = () => {
       </Pressable>
 
       <View style={styles.iconContainer}>
-        <IconButton>
+        <IconButton onPress={navigateAddPostHandler}>
           <Feather
             name="plus-square"
             size={24}
