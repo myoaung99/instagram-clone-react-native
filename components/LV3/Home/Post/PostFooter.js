@@ -72,8 +72,8 @@ const PostFooter = ({ post }) => {
           <Text style={{ color: "gray", marginTop: 6 }}>No comment</Text>
         )}
 
-        {post.comments?.map((cmt) => (
-          <View>
+        {post.comments?.map((cmt, index) => (
+          <View key={index}>
             <Text style={{ color: "white", fontWeight: "600", marginTop: 6 }}>
               {cmt.user}
               <Text style={{ color: "white", fontWeight: "400" }}>

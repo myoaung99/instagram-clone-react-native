@@ -1,6 +1,12 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
+/**
+ * @param {children} param0 Badge content
+ * @param {style} param1 Badge position
+ * @returns Badge component
+ */
+
 const Badge = ({ children, style }) => {
   return (
     <View style={[styles.unreadBadge, style]}>

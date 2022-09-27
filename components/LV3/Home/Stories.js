@@ -2,6 +2,7 @@ import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { USERS } from "../../../data/users";
 import { Divider } from "@rneui/themed";
+import CircleProfile from "../../LV2/UI/CircleProfile";
 
 const Stories = () => {
   return (
@@ -13,14 +14,10 @@ const Stories = () => {
       >
         {USERS.map((user) => (
           <View style={styles.story} key={user.id}>
-            <View style={styles.imageContainer}>
-              <Image
-                style={styles.image}
-                source={{
-                  uri: user.image,
-                }}
-              />
-            </View>
+            <CircleProfile
+              style={{ width: 70, height: 70 }}
+              imageUri={user.image}
+            />
             <View style={styles.nameContainer}>
               <Text style={styles.nameText}>
                 {user.username.length > 6
