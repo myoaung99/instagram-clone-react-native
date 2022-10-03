@@ -21,7 +21,7 @@ function MyStack({navigation, route}) {
             navigation.setOptions({tabBarStyle: {display: 'none'}});
         }else {
             navigation.setOptions({tabBarStyle: {display: 'flex',
-                    position: "absolute",
+
                     backgroundColor: "#000",
                     borderTopWidth: 1,
                     borderTopColor: "gray",
@@ -56,7 +56,7 @@ function MyTabs() {
         tabBarShowLabel: false,
         tabBarActiveTintColor: "#fff",
         tabBarStyle: {
-          position: "absolute",
+
           backgroundColor: "#000",
           borderTopWidth: 1,
           borderTopColor: "gray",
