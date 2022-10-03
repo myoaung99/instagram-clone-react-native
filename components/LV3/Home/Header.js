@@ -2,7 +2,7 @@ import { View, Image, StyleSheet, Pressable } from "react-native";
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
-import IconButton from "../../LV2/Button/IconButton";
+import Button from "../../LV2/Button/Button";
 import Badge from "../../LV2/UI/Badge";
 import { useNavigation } from "@react-navigation/native";
 
@@ -23,20 +23,20 @@ const Header = () => {
       </Pressable>
 
       <View style={styles.iconContainer}>
-        <IconButton onPress={navigateAddPostHandler}>
+        <Button onPress={navigateAddPostHandler}>
           <Feather
             name="plus-square"
             size={24}
             color="white"
             style={styles.icon}
           />
-        </IconButton>
+        </Button>
 
-        <IconButton>
+        <Button>
           <Feather name="heart" size={24} color="white" style={styles.icon} />
-        </IconButton>
+        </Button>
 
-        <IconButton>
+        <Button>
           <Badge style={styles.badge}>11</Badge>
           <Ionicons
             name="ios-chatbubble-outline"
@@ -44,7 +44,7 @@ const Header = () => {
             color="white"
             style={styles.icon}
           />
-        </IconButton>
+        </Button>
       </View>
     </View>
   );

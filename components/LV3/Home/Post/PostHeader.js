@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
-import IconButton from "../../../LV2/Button/IconButton";
+import Button from "../../../LV2/Button/Button";
 import { Entypo } from "@expo/vector-icons";
 
 const PostHeader = ({ post }) => {
@@ -13,9 +13,9 @@ const PostHeader = ({ post }) => {
         <Text style={styles.profileName}>{post.user}</Text>
       </View>
 
-      <IconButton>
+      <Button>
         <Entypo name="dots-three-horizontal" size={24} color="white" />
-      </IconButton>
+      </Button>
     </View>
   );
 };

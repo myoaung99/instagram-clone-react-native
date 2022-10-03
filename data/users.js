@@ -11,28 +11,28 @@ export const USERS = [
     name: "Ervin Howell",
     username: "Antonette",
     image:
-      "https://i.pinimg.com/564x/fb/b5/b5/fbb5b5189fc04f883b7f98e7eed9165e.jpg",
+      "https://i.pinimg.com/564x/06/38/65/0638655e663eb45662b9eede724e7e5a.jpg",
   },
   {
     id: 3,
     name: "Clementine Bauch",
     username: "Samantha",
     image:
-      "https://i.pinimg.com/564x/9c/72/89/9c7289e90f845dbfb95e62b303d26d48.jpg",
+      "https://i.pinimg.com/564x/c9/51/ba/c951ba9d8cb53ac4fdaf699320b8b57c.jpg",
   },
   {
     id: 4,
     name: "Patricia Lebsack",
     username: "Karianne",
     image:
-      "https://i.pinimg.com/564x/37/93/76/3793764fbe49e6060a4c1494d500e4fe.jpg",
+      "https://i.pinimg.com/564x/8a/5d/43/8a5d4342d979f4d9ca899a19d611e679.jpg",
   },
   {
     id: 5,
     name: "Chelsey Dietrich",
     username: "Kamren",
     image:
-      "https://i.pinimg.com/564x/aa/6e/06/aa6e06fd369802f5ca07eb30733e69d8.jpg",
+      "https://i.pinimg.com/564x/ff/15/23/ff15239d72da64d94d7b6ec90b4b77da.jpg",
   },
   {
     id: 6,

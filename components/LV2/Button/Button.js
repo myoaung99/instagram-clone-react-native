@@ -1,7 +1,7 @@
 import { Pressable, StyleSheet } from "react-native";
 import React from "react";
 
-const IconButton = ({ children, style, onPress }) => {
+const Button = ({ children, style, onPress }) => {
   return (
     <Pressable
       onPress={onPress}
@@ -12,13 +12,13 @@ const IconButton = ({ children, style, onPress }) => {
   );
 };
 
-export default IconButton;
+export default Button;
 
 const styles = StyleSheet.create({
   button: {
     position: "relative",
   },
   pressed: {
-    opacity: 0.75,
+    opacity: 0.5,
   },
 });

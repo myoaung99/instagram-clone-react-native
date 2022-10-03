@@ -3,45 +3,45 @@ import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import IconButton from "../../../LV2/Button/IconButton";
+import Button from "../../../LV2/Button/Button";
 
 const PostFooter = ({ post }) => {
   return (
     <View>
       <View style={styles.container}>
         <View style={styles.iconContainer}>
-          <IconButton>
+          <Button>
             <Feather name="heart" size={24} color="white" style={styles.icon} />
-          </IconButton>
+          </Button>
 
-          <IconButton>
+          <Button>
             <Feather
               name="plus-square"
               size={24}
               color="white"
               style={styles.icon}
             />
-          </IconButton>
+          </Button>
 
-          <IconButton>
+          <Button>
             <Ionicons
               name="ios-chatbubble-outline"
               size={24}
               color="white"
               style={styles.icon}
             />
-          </IconButton>
+          </Button>
         </View>
 
         <View>
-          <IconButton>
+          <Button>
             <MaterialCommunityIcons
               style={styles.icon}
               name="bookmark-outline"
               size={28}
               color="white"
             />
-          </IconButton>
+          </Button>
         </View>
       </View>
 
