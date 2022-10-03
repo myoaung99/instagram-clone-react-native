@@ -1,7 +1,8 @@
-import { StyleSheet, Text, StatusBar } from "react-native";
+import React from "react";
 import HomeScreen from "./screens/HomeScreen";
+import { StyleSheet, Text, StatusBar } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, getFocusedRouteNameFromRoute } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import DUMMY_SCREEN from "./screens/DUMMY_SCREEN.js";
@@ -13,7 +14,20 @@ import AddPostScreen from "./screens/AddPostScreen";
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function MyStack() {
+function MyStack({navigation, route}) {
+    React.useLayoutEffect(() => {
+        const routeName = getFocusedRouteNameFromRoute(route);
+        if (routeName === "AddPost"){
+            navigation.setOptions({tabBarStyle: {display: 'none'}});
+        }else {
+            navigation.setOptions({tabBarStyle: {display: 'flex',
+                    position: "absolute",
+                    backgroundColor: "#000",
+                    borderTopWidth: 1,
+                    borderTopColor: "gray",
+                }});
+        }
+    }, [navigation, route]);
   return (
     <Stack.Navigator
       screenOptions={{
